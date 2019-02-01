@@ -199,7 +199,7 @@ $headfonts: $bodyfonts;
 $codefonts: "Courier New", Courier, monospace;
 $tabFont: 14px $bodyfonts;
 $buttonfonts: $bodyfonts;
-$treePseudoRootFont: bold 14px/3 $headfonts;
+$treePseudoRootFont: 500 14px/3 $headfonts;
 $treeNodeFont: normal 14px/2.25 $bodyfonts;
 $baseText:   normal 13px/1.4 $bodyfonts;
 $baseTextHeight: 13px * 1.4;
@@ -208,7 +208,7 @@ $fontMedium: normal 12px $bodyfonts;
 $fontNormal: normal $bodyFontSize $bodyfonts;
 $fontNavbar: normal $bodyFontSize $headfonts;
 $fontH2:     normal 25px $headfonts;
-$fontH3:     bold 15px $headfonts;
+$fontH3:     500 15px $headfonts;
 
 /* Responsive breakpoints */
 $mobile:  (media: 'max-width 640px',  columns: 4);

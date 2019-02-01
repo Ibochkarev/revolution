@@ -618,6 +618,11 @@ a.x-grid-link:hover, a.x-grid-link:focus{ text-decoration: underline; }
   color: #90b1b9;
 }
 
+.news_article img {
+  max-width: 100%;
+  height: auto;
+}
+
 .news_article .date_stamp {
   color: #535d6c;
   float: right;
