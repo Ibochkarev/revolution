@@ -3,25 +3,36 @@ $colorSplash: #234368;
 $colorSplashLight: lighten($colorSplash, 50%);
 $colorSplashMedium: lighten($colorSplash, 75%);
 $colorSplashDark: darken($colorSplash, 20%);
-$colorSplashDesaturated: lighten(desaturate($colorSplash,100%), 20%); /* unused */
-$colorSplashContrast: #FFFFFF; /* needs much more adaption, should be used as text color for elements with $colorSplash background */
+$colorSplashDesaturated: lighten(desaturate($colorSplash, 100%), 20%);
+/* unused */
+$colorSplashContrast: #FFFFFF;
+/* needs much more adaption, should be used as text color for elements with $colorSplash background */
 $primary1: #32AB9A;
 $primary2: #00948E;
+$silver: #CCC;
+$alto: #DFDFDF;
 $lightestGray: #FBFBFB;
 $lighterGray: #F0F0F0;
 $lightGray: #E4E4E4;
 $softGray: #DCDCDC;
+$boulder: #777777;
 $mediumGray: #999999;
 $darkGray: #515151;
-$darkestGray: #53595F; /* a blueish dark gray */
+$emperor: #555;
+$darkestGray: #53595F;
+/* a blueish dark gray */
 $white: #FFF;
-$black: darken($colorSplash, 42.5%); /* generate the black from the $colorSplash */
+$concrete: #F2F2F2;
+$alabaster: #FAFAFA;
+$black: darken($colorSplash, 42.5%);
+/* generate the black from the $colorSplash */
 $yellow: #FCE588;
 $orange: #F0B429;
 $red: #CF1124;
 $green: #6CB24A;
 $greener: darken($green, 12%);
-$blue: #3697cd; /* default theme $colorSplash */
+$blue: #3697cd;
+/* default theme $colorSplash */
 
 /* Status Message */
 $statusMessageBg: #6CB24A;
@@ -53,7 +64,7 @@ $borderRadius: 3px;
 
 /* Shadows */
 $boxShadow: 0 4px 6px rgba(0, 0, 0, 0.15);
-$boxShadowBig: 0 0 15px 0 rgba(0,0,0,0.2);
+$boxShadowBig: 0 0 15px 0 rgba(0, 0, 0, 0.2);
 $shadowBorder: 0 0 0 1px $borderColor;
 $shadowBorderField: 0 0 0 1px $borderColor;
 $shadowBorderDark: 0 0 0 1px $softGray;
@@ -122,7 +133,7 @@ $treeHeaderBg: $lightestGray;
 $treeBg: $lightestGray;
 $treeBgSelected: #d6e7f8;
 $treeColor: $darkGray;
-$treeColorDesaturated: lighten(desaturate($treeColor,100%), 25%);
+$treeColorDesaturated: lighten(desaturate($treeColor, 100%), 25%);
 $treeColor_2: #728DA7;
 $treePseudoRootBg: #f2f2f2;
 $treePseudoRootColor: $darkestGray;
@@ -145,7 +156,7 @@ $unpubText: italic;
    as italic is used for "unpublished" */
 $lockedText: inherit; //italic;
 
-$delTextColor: fade-out(darken(lighten(desaturate($red,50%), 33%), 25%), 0.5) !important;
+$delTextColor: fade-out(darken(lighten(desaturate($red, 50%), 33%), 25%), 0.5) !important;
 $delTextStyle: normal;
 $delTextDeco: line-through;
 
@@ -153,9 +164,12 @@ $treeDivider: #404040;
 
 $navbarWidth: 80px;
 /* Top navigation colors */
-$navbarBg: $lighterGray; /* unused */
-$navbarHover: $softGray; /* unused */
-$navbarDrop: $navbarBg; /* unused */
+$navbarBg: $lighterGray;
+/* unused */
+$navbarHover: $softGray;
+/* unused */
+$navbarDrop: $navbarBg;
+/* unused */
 $navbarText: $white;
 $navbarBorder: rgba(255, 255, 255, .1);
 $subnavBg: $white;
@@ -193,35 +207,36 @@ $winFooterBorderColor: $white;
 /* Font stacks */
 $bodyfonts: 'Helvetica Neue', Helvetica, Arial, Tahoma, sans-serif;
 $bodyFontSize: 13px;
-$altfonts: titilliumregular, $bodyfonts; /* unused */
-$altfontslight: titilliumlight, $bodyfonts; /* unused */
+$altfonts: titilliumregular, $bodyfonts;
+/* unused */
+$altfontslight: titilliumlight, $bodyfonts;
+/* unused */
 $headfonts: $bodyfonts;
 $codefonts: "Courier New", Courier, monospace;
 $tabFont: 14px $bodyfonts;
 $buttonfonts: $bodyfonts;
 $treePseudoRootFont: 500 14px/3 $headfonts;
 $treeNodeFont: normal 14px/2.25 $bodyfonts;
-$baseText:   normal 13px/1.4 $bodyfonts;
+$baseText: normal 13px/1.4 $bodyfonts;
 $baseTextHeight: 13px * 1.4;
-$fontSmall:  normal 11px $bodyfonts;
+$fontSmall: normal 11px $bodyfonts;
 $fontMedium: normal 12px $bodyfonts;
 $fontNormal: normal $bodyFontSize $bodyfonts;
 $fontNavbar: normal $bodyFontSize $headfonts;
-$fontH2:     normal 25px $headfonts;
-$fontH3:     500 15px $headfonts;
+$fontH2: normal 25px $headfonts;
+$fontH3: 500 15px $headfonts;
 
 /* Responsive breakpoints */
-$mobile:  (media: 'max-width 640px',  columns: 4);
-$tabletP: (media: 'max-width 768px',  columns: 12);
-$desktop: (media: 'max-width 960px',  columns: 12);
+$mobile: (media: 'max-width 640px', columns: 4);
+$tabletP: (media: 'max-width 768px', columns: 12);
+$desktop: (media: 'max-width 960px', columns: 12);
 $tabletL: (media: 'max-width 1024px', columns: 12);
-$cinema:  (media: 'max-width 1400px', columns: 12);
-
-$gtMobile:  (media: 'min-width 641px',  columns: 12);
-$gtTabletP: (media: 'min-width 769px',  columns: 12);
-$gtTabletL: (media: 'min-width 1025px', columns: 12);
-$gtDesktop: (media: 'min-width 961px',  columns: 12);
-$gtCinema:  (media: 'min-width 1401px', columns: 12);
+$cinema: (media: 'max-width 14x', columns: 12);
+$gtMobile: (media: 'min-width 641px', columns: 12);
+$gtTabletP: (media: 'min-width 769px', columns: 12);
+$gtTabletL: (media: 'min-width 1px', columns: 12);
+$gtDesktop: (media: 'min-width 961px', columns: 12);
+$gtCinema: (media: 'min-width 1401px', columns: 12);
 
 /* Path for background-images */
 $imgPath: '../images/';

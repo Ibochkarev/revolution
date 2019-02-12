@@ -4,9 +4,11 @@ textarea {
 
 textarea.x-form-field,
 .x-form-textarea {
-  display: block; /* make the field description (below) stick to the bottom correctly */
+  display: block;
+  /* make the field description (below) stick to the bottom correctly */
   font-family: $codefonts;
-  padding: 5px; /* override standard extjs theme */
+  padding: 5px;
+  /* override standard extjs theme */
 }
 
 /* use default manager font for TV textareas to have unified look across TVs */
@@ -25,7 +27,8 @@ textarea[name="introtext"],
   font: $baseText;
 }
 
-.x-form-text, /* this screws up clear cache modal #shame */
+.x-form-text,
+/* this screws up clear cache modal #shame */
 textarea.x-form-field,
 .x-form-textarea {
   background-color: $coreFieldBg;
@@ -33,7 +36,7 @@ textarea.x-form-field,
   border-radius: $borderRadius;
   border: 1px solid $borderColor;
   position: relative;
-  transition: border-color 0.25s;
+  transition: border-color .25s;
 }
 
 .x-viewport .x-trigger-wrap-focus,
@@ -51,7 +54,8 @@ textarea.x-form-field,
   border-radius: $borderRadius $borderRadius 0 0;
 }
 
-.x-form-invalid, textarea.x-form-invalid {
+.x-form-invalid,
+textarea.x-form-invalid {
   border-color: $red !important;
 }
 
@@ -63,7 +67,8 @@ input::-moz-focus-inner {
 }
 
 /* special rule for the TVs additional input/output properties form to have padding on top */
-#modx-input-props, #modx-widget-props {
+#modx-input-props,
+#modx-widget-props {
   padding: 15px 0 0 0;
 }
 
@@ -71,15 +76,18 @@ input::-moz-focus-inner {
 .x-form-item {
   display: block;
   margin: 0;
-  outline: 0 none; /* prevent firefox from creating ugly dotted outlines */
-  position: relative; /* boundary for absolutely positioned elements */
+  outline: 0 none;
+  /* prevent firefox from creating ugly dotted outlines */
+  position: relative;
+  /* boundary for absolutely positioned elements */
 
   /* general styles for form labels, paddings for various form layouts are handled below */
   label.x-form-item-label {
     color: $coreFieldLabelColor;
     font-size: 13px;
     font-weight: bold;
-    position: relative; /* boundary for absolutely positioned elements */
+    position: relative;
+    /* boundary for absolutely positioned elements */
 
     .modx-tv-label-title {
       display: inline-block;
@@ -99,10 +107,13 @@ input::-moz-focus-inner {
       /*float: left;*/
       height: 16px;
       opacity: 0;
-      filter: alpha(opacity=0); /* for IE <= 8 */
+      filter: alpha(opacity=0);
+      /* for IE <= 8 */
       padding: 17px 8px 0 0;
-      position: relative; top: 0; right: 0px;
-      transition: all 0.25s;
+      position: relative;
+      top: 0;
+      right: 0px;
+      transition: all .25s;
       width: 16px;
 
       &:before {
@@ -112,11 +123,14 @@ input::-moz-focus-inner {
         color: $coreFieldLabelColor;
         content: fa-content($fa-var-sync);
         font-size: 16px;
-        position: relative; bottom: 0; left: 0;
+        position: relative;
+        bottom: 0;
+        left: 0;
         padding-left: 4px;
         text-align: center;
         vertical-align: middle;
-        width: 16px; height: 16px;
+        width: 16px;
+        height: 16px;
       }
 
       &:hover:before {
@@ -130,9 +144,12 @@ input::-moz-focus-inner {
 
     &:hover .modx-tv-reset {
       opacity: 1;
-      filter: alpha(opacity=100); /* for IE <= 8 */
+      filter: alpha(opacity=100);
+      /* for IE <= 8 */
     }
-  } /* label.x-form-item-label */
+  }
+
+  /* label.x-form-item-label */
 
   &.modx-tv {
     padding: 0 0 0 0px !important;
@@ -147,7 +164,10 @@ input::-moz-focus-inner {
     font-style: italic;
     /*line-height: 1.2;*/
     /*padding: 19px 0 4px 0;*/
-    position: absolute; top: 19px; right: 0; /* absolute position to avoid layout issues with long descriptions */
+    position: absolute;
+    top: 19px;
+    right: 0;
+    /* absolute position to avoid layout issues with long descriptions */
   }
 
   .modx-tv-image-preview {
@@ -182,17 +202,25 @@ input::-moz-focus-inner {
         border-width: 10px 10px 10px 0;
         border-color: transparent $lightGray transparent transparent;
         content: '';
-        position: absolute; top: 0; left: -10px;
-        -webkit-transform: rotate(360deg); /* for better anti-aliasing in webkit browsers */
-        width: 0; height: 0;
+        position: absolute;
+        top: 0;
+        left: -10px;
+        transform: rotate(360deg);
+        /* for better anti-aliasing in webkit browsers */
+        width: 0;
+        height: 0;
       }
 
       &:after {
         background-color: $white;
-        border-radius: 50%; /* make a circle */
+        border-radius: 50%;
+        /* make a circle */
         content: '';
-        position: absolute; top: 8px; left: -4px;
-        width: 4px; height: 4px;
+        position: absolute;
+        top: 8px;
+        left: -4px;
+        width: 4px;
+        height: 4px;
       }
 
       &.modx-tag-checked,
@@ -202,14 +230,14 @@ input::-moz-focus-inner {
         text-decoration: none;
 
         &:before {
-           border-color: transparent $colorSplash transparent transparent;
+          border-color: transparent $colorSplash transparent transparent;
         }
 
         &:hover {
           background-color: darken($colorSplash, 6%);
 
           &:before {
-             border-color: transparent darken($colorSplash, 6%) transparent transparent;
+            border-color: transparent darken($colorSplash, 6%) transparent transparent;
           }
         }
       }
@@ -221,7 +249,7 @@ input::-moz-focus-inner {
     border: 1px solid $borderColor;
     border-radius: $borderRadius;
     padding: 5px;
-    transition: all 0.25s;
+    transition: all .25s;
 
     &:focus {
       border: 1px solid $borderColorFocus;
@@ -238,7 +266,8 @@ input::-moz-focus-inner {
   .x-form-label-left & {
     /* targets .x-form-item */
     padding: 15px 0 0 0;
-    padding-bottom: 0; /* override extjs default theme styles */
+    padding-bottom: 0;
+    /* override extjs default theme styles */
 
     &:first-of-type {
       /* do not add the top padding to the first .x-form-item in this type of form layout */
@@ -246,16 +275,20 @@ input::-moz-focus-inner {
     }
 
     label.x-form-item-label {
-      display: inline-block; /* override extjs default theme styles */
-      margin: 0; /* override extjs default theme styles */
-      padding: 7px 0px 7px 0px;
+      display: inline-block;
+      /* override extjs default theme styles */
+      margin: 0;
+      /* override extjs default theme styles */
+      padding: 7px 0px;
     }
   }
 
   .x-form-label-top & {
     /* targets .x-form-item */
-    padding: 0; /* override the .x-form-label-left rule */
-    padding-bottom: 0; /* override extjs default theme styles */
+    padding: 0;
+    /* override the .x-form-label-left rule */
+    padding-bottom: 0;
+    /* override extjs default theme styles */
 
     &:first-of-type {
       .modx-tv-reset {
@@ -264,8 +297,10 @@ input::-moz-focus-inner {
     }
 
     label.x-form-item-label {
-      display: inline-block; /* override extjs default theme styles */
-      margin: 0; /* override extjs default theme styles */
+      display: inline-block;
+      /* override extjs default theme styles */
+      margin: 0;
+      /* override extjs default theme styles */
       padding: 15px 0 4px 0;
     }
   }
@@ -273,36 +308,43 @@ input::-moz-focus-inner {
   .x-window & {
 
     .x-form-item-label {
-      padding: 10px 0 4px 0; /* move the form fields a bit tighter together inside windows */
+      padding: 10px 0 4px 0;
+      /* move the form fields a bit tighter together inside windows */
     }
   }
 
   &.x-hide-label {
-    padding-top: 10px !important; /* make this override common rules */
+    padding-top: 10px !important;
+    /* make this override common rules */
 
     #modx-resource-content & {
-      padding-top: 0 !important; /* make this override the rule above */
+      padding-top: 0 !important;
+      /* make this override the rule above */
     }
 
     label.x-form-item-label {
-      display: none; /* override !important rule from above */
+      display: none;
+      /* override !important rule from above */
     }
   }
 
   .x-form-element {
     padding: 0;
     font: $baseText;
-  } /* .x-form-element */
+  }
+
+  /* .x-form-element */
 
   /* prevent columns used inside form elements to have too much spacing, some custom TV types need this */
-  .x-column-inner > .x-column {
+  .x-column-inner>.x-column {
 
-    ~ .x-column {
+    ~.x-column {
       margin-left: 5px;
     }
 
     .x-form-field-wrap {
-      width: auto !important; /* make sure the wrap is always full width of parent, fixes some custom TVs */
+      width: auto !important;
+      /* make sure the wrap is always full width of parent, fixes some custom TVs */
     }
   }
 
@@ -312,9 +354,11 @@ input::-moz-focus-inner {
   }
 
   .x-btn {
-    padding: 7px 10px 7px 10px;
+    padding: 7px 10px;
   }
-} /* .x-form-item */
+}
+
+/* .x-form-item */
 
 .desc-under {
   color: $coreFieldDescColor;
@@ -338,13 +382,17 @@ input::-moz-focus-inner {
 
 .x-fieldset {
   border: 1px solid $borderColor;
-  border-radius: $borderRadius !important; /* !important ensures the border radius, also when the fieldset has a class that sets it to 0 */
+  border-radius: $borderRadius !important;
+  /* !important ensures the border radius, also when the fieldset has a class that sets it to 0 */
   margin: 15px 0 0 0;
-  overflow: visible; /* allow the legend to be displayed correctly */
-  padding: 0; /* override extjs default styles */
+  overflow: visible;
+  /* allow the legend to be displayed correctly */
+  padding: 0;
+  /* override extjs default styles */
   position: relative;
 
-  .x-fieldset-header { /* legend */
+  .x-fieldset-header {
+    /* legend */
     color: $coreFieldLabelColor;
     font: $fontSmall;
     font-weight: bold;
@@ -353,14 +401,16 @@ input::-moz-focus-inner {
     position: relative;
 
     .x-fieldset-header-text {
-      line-height: 18px; /* prevent collapse button cut off */
+      line-height: 18px;
+      /* prevent collapse button cut off */
     }
   }
 
   .x-fieldset-bwrap {
 
     .x-fieldset-body {
-      overflow-x: hidden !important; /* prevent unnecessary horizontal scrollbars */
+      overflow-x: hidden !important;
+      /* prevent unnecessary horizontal scrollbars */
       padding: 0 10px 10px 10px;
     }
   }
@@ -375,7 +425,8 @@ input::-moz-focus-inner {
 
     /* not sure if this applies to all buttons inside composite fields, could only find Image+ TV using this */
     .x-btn {
-      top: 1px !important; /* override inline style */
+      top: 1px !important;
+      /* override inline style */
     }
   }
 }
@@ -396,14 +447,12 @@ input::-moz-focus-inner {
 
 /* issue #5505 */
 .x-form-text {
-  /*box-sizing: border-box;*/ /* we cannot use this because extjs calculates widths with the old box-model */
+  /*box-sizing: border-box;*/
+  /* we cannot use this because extjs calculates widths with the old box-model */
   line-height: 20px;
-  min-height: 20px; /* + 5px + 5px padding = 30px */
+  min-height: 20px;
+  /* + 5px + 5px padding = 30px */
   padding: 5px;
-}
-
-.x-form-textarea {
-
 }
 
 .x-form-field-wrap {
@@ -420,11 +469,18 @@ input::-moz-focus-inner {
     /*@extend %secondary-button;*/
     /*background: url($imgPath + 'modx-theme/form/trigger.png') no-repeat left center;*/
     border: 0;
-    border-radius: 0 $borderRadius $borderRadius 0; /* override button styles border-radius */
-    box-shadow: none; /* override button styles box-shadow */
-    padding: 0; /* override button styles padding */
-    width: 30px; height: 100% !important; /* height 100% to enable vertical centering, !important to override default extjs theme styles */
-    position: absolute; top: 0; right: 0;
+    border-radius: 0 $borderRadius $borderRadius 0;
+    /* override button styles border-radius */
+    box-shadow: none;
+    /* override button styles box-shadow */
+    padding: 0;
+    /* override button styles padding */
+    width: 30px;
+    height: 100% !important;
+    /* height 100% to enable vertical centering, !important to override default extjs theme styles */
+    position: absolute;
+    top: 0;
+    right: 0;
 
     &:before {
       @extend %pseudo-font;
@@ -432,13 +488,17 @@ input::-moz-focus-inner {
       box-sizing: border-box;
       content: fa-content($fa-var-chevron-down);
       font-size: 14px;
-      margin-top: -7px; /* half of the height to center vertically with top 50% */
-      opacity: 0.8;
-      filter: alpha(opacity=60); /* for IE <= 8 */
-      position: absolute; top: 50%; right: 0;
+      margin-top: -7px;
+      /* half of the height to center vertically with top 50% */
+      opacity: .8;
+      filter: alpha(opacity=60);
+      /* for IE <= 8 */
+      position: absolute;
+      top: 50%;
+      right: 0;
       text-align: center;
       width: 30px;
-      transition: opacity 0.25s;
+      transition: opacity .25s;
     }
 
     &.x-form-trigger-over,
@@ -447,7 +507,8 @@ input::-moz-focus-inner {
 
       &:before {
         opacity: 1;
-        filter: alpha(opacity=100); /* for IE <= 8 */
+        filter: alpha(opacity=100);
+        /* for IE <= 8 */
       }
     }
 
@@ -457,7 +518,8 @@ input::-moz-focus-inner {
 
       &:before {
         opacity: 1;
-        filter: alpha(opacity=100); /* for IE <= 8 */
+        filter: alpha(opacity=100);
+        /* for IE <= 8 */
       }
     }
 
@@ -488,10 +550,6 @@ input::-moz-focus-inner {
       content: fa-content($fa-var-file-code);
       font-weight: 400;
     }
-    /* styles for the inline grid editor */
-    .x-small-editor & {
-
-    }
   }
 
   &.x-datetime-wrap {
@@ -519,39 +577,54 @@ input::-moz-focus-inner {
 
   /* xtype: fileuploadfield styles, mainly used for import windows */
   &.x-form-fileupload-wrap {
-    overflow: visible; /* allows the upload button to cover the border of the wrap on hover */
+    overflow: visible;
+    /* allows the upload button to cover the border of the wrap on hover */
     position: relative;
 
     .x-form-file {
-      position: absolute; top: 0; right: 0;
+      position: absolute;
+      top: 0;
+      right: 0;
       min-height: 20px;
       opacity: 0;
-      filter: alpha(opacity=0); /* for IE <= 8 */
+      filter: alpha(opacity=0);
+      /* for IE <= 8 */
       padding: 5px;
       z-index: 2;
     }
+
     .x-form-file-btn {
       border-radius: 0 $borderRadius $borderRadius 0;
-      padding: 7px; /* override default button padding */
-      position: absolute; top: 0; right: 0;
-      z-index: 1; /* needs to stay below the transparent file input field */
-      line-height:0;
+      padding: 7px;
+      /* override default button padding */
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 1;
+      /* needs to stay below the transparent file input field */
+      line-height: 0;
       box-shadow: none;
       border-left: solid 1px $borderColor;
     }
+
     .x-form-file-text {
       position: relative;
-      z-index: 3; /* needs to stay above the transparent file input field */
+      z-index: 3;
+      /* needs to stay above the transparent file input field */
     }
   }
-} /* .x-form-field-wrap */
+}
+
+/* .x-form-field-wrap */
 
 /* both, radio groups and checkbox groups are wrapped in a x-form-check-wrap */
 .x-form-check-wrap,
 .x-fieldset-checkbox-toggle legend {
   height: auto !important;
-  line-height: 18px; /* this is also default in the extjs default theme */
-  /*padding-top: 15px;*/ /* already done by .x-hide-label */
+  line-height: 18px;
+  /* this is also default in the extjs default theme */
+  /*padding-top: 15px;*/
+  /* already done by .x-hide-label */
 
   .x-form-label-left & {
     padding: 7px 0 7px 0;
@@ -565,11 +638,14 @@ input::-moz-focus-inner {
   .x-fieldset-header-text {
     color: $coreFieldLabelColor;
     cursor: pointer;
-    display: inline-block; /* make line-height apply */
+    display: inline-block;
+    /* make line-height apply */
     font-weight: normal;
     margin: 0;
     padding-left: 20px;
-    position: relative; top: 0; /* override extjs default style */
+    position: relative;
+    top: 0;
+    /* override extjs default style */
     /*transition: all 0.25s;*/
 
     .ext-ie8 & {
@@ -587,10 +663,13 @@ input::-moz-focus-inner {
       content: '';
       font-size: 18px;
       padding-right: 3px;
-      position: absolute; top: 0; left: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
       text-align: center;
       vertical-align: middle;
-      width: 18px; height: 18px;
+      width: 18px;
+      height: 18px;
     }
 
     &:hover:before,
@@ -605,63 +684,80 @@ input::-moz-focus-inner {
 
   /* checkbox & radio button replacement */
   .x-form-checkbox,
-  input[type="checkbox"], /* we need this to catch un-classed checkboxes in fieldset legends */
+  input[type="checkbox"],
+  /* we need this to catch un-classed checkboxes in fieldset legends */
   .x-form-radio {
     /*display: none;*/
     cursor: pointer;
     opacity: 0;
-    position: absolute; top: 0; left: 0;
-    width: 18px; height: 18px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 18px;
+    height: 18px;
     z-index: 1;
 
     .ext-ie8 & {
       /*display: inline-block; /* fallback for IE8 */
-      position: relative; top: auto; left: auto;
-      width: 13px; height: 13px;
+      position: relative;
+      top: auto;
+      left: auto;
+      width: 13px;
+      height: 13px;
     }
 
-    &:hover + .x-form-cb-label:before,
-    &:hover + .x-fieldset-header-text:before,
-    &:focus + .x-form-cb-label:before,
-    &:focus + .x-fieldset-header-text:before {
+    &:hover+.x-form-cb-label:before,
+    &:hover+.x-fieldset-header-text:before,
+    &:focus+.x-form-cb-label:before,
+    &:focus+.x-fieldset-header-text:before {
       color: $colorSplash;
     }
 
-    &:active + .x-form-cb-label:before,
-    &:active + .x-fieldset-header-text:before {
+    &:active+.x-form-cb-label:before,
+    &:active+.x-fieldset-header-text:before {
       color: darken($colorSplash, 6%);
     }
   }
 
-  .x-form-checkbox + .x-form-cb-label:before,
-  input[type="checkbox"] + .x-fieldset-header-text:before {
+  .x-form-checkbox+.x-form-cb-label:before,
+  input[type="checkbox"]+.x-fieldset-header-text:before {
     content: fa-content($fa-var-square);
     font-weight: 400;
   }
 
-  .x-form-checkbox:checked + .x-form-cb-label:before,
-  input[type="checkbox"]:checked + .x-fieldset-header-text:before {
+  .x-form-checkbox:checked+.x-form-cb-label:before,
+  input[type="checkbox"]:checked+.x-fieldset-header-text:before {
     content: fa-content($fa-var-check-square);
     font-weight: 400;
   }
 
-  .x-form-radio + .x-form-cb-label:before {
+  .x-form-radio+.x-form-cb-label:before {
     content: fa-content($fa-var-circle);
     font-weight: 400;
   }
 
-  .x-form-radio:checked + .x-form-cb-label:before {
+  .x-form-radio:checked+.x-form-cb-label:before {
     content: fa-content($fa-var-dot-circle);
     font-weight: 400;
   }
-} /* .x-form-check-wrap */
+}
+
+/* .x-form-check-wrap */
 /* Special checboxes for resources */
 #modx-resource-tabs {
-  .x-form-check-wrap, .x-fieldset-checkbox-toggle legend, .x-fieldset legend {
-    [type="checkbox"]/*, [type="radio"]*/ {
+
+  .x-form-check-wrap,
+  .x-fieldset-checkbox-toggle legend,
+  .x-fieldset legend {
+    [type="checkbox"]
+
+    /*, [type="radio"]*/
+      {
       position: absolute;
       left: -9999px;
-      & + .x-form-cb-label, & + .x-fieldset-header-text {
+
+      &+.x-form-cb-label,
+      &+.x-fieldset-header-text {
         position: relative;
         padding-left: 4em;
         padding-top: .2em;
@@ -669,12 +765,15 @@ input::-moz-focus-inner {
         //line-height: 1.6em;
         cursor: pointer;
         box-sizing: border-box;
-        &:before, &:after {
+
+        &:before,
+        &:after {
           content: '';
           position: absolute;
           transition: all .2s ease;
           font-size: inherit;
         }
+
         &:before {
           left: 0;
           top: 0;
@@ -684,6 +783,7 @@ input::-moz-focus-inner {
           border-radius: 1.2em;
           z-index: 10;
         }
+
         &:after {
           left: .1em;
           top: 0.8em;
@@ -691,32 +791,42 @@ input::-moz-focus-inner {
           height: 1.3em;
           width: 1.3em;
           border-radius: 50%;
-          background-color: #fff;
+          background-color: $white;
           z-index: 11;
         }
       }
+
       &:checked {
-        & + .x-form-cb-label, & + .x-fieldset-header-text {
+
+        &+.x-form-cb-label,
+        &+.x-fieldset-header-text {
           &:after {
             left: 0.1em;
             top: 0.8em;
           }
+
           &:before {
             background-color: $green;
             border-color: $green;
           }
         }
       }
+
       &.danger:checked {
-        & + .x-form-cb-label, & + .x-fieldset-header-text {
+
+        &+.x-form-cb-label,
+        &+.x-fieldset-header-text {
           &:before {
             background-color: $red;
             border-color: $red;
           }
         }
       }
+
       &.warning:checked {
-        & + .x-form-cb-label, & + .x-fieldset-header-text {
+
+        &+.x-form-cb-label,
+        &+.x-fieldset-header-text {
           &:before {
             background-color: $orange;
             border-color: $orange;
@@ -730,14 +840,17 @@ input::-moz-focus-inner {
 .x-form-check-group,
 .x-form-radio-group {
   /*overflow: visible; /* do not cut off the bottom of the input elements */
-  overflow: hidden; /* visible causes horizontal scrollbars in vertical tabs */
+  overflow: hidden;
+  /* visible causes horizontal scrollbars in vertical tabs */
 
-  .x-column { /* we need this to have access to the first child */
+  .x-column {
+    /* we need this to have access to the first child */
 
     .x-form-item {
       &:first-child {
         padding: 4px 0 0 0;
       }
+
       &:last-child {
         padding: 0 0 4px 0;
       }
@@ -757,35 +870,41 @@ input::-moz-focus-inner {
 /* superboxselect / multi-select field */
 .x-superboxselect {
   /*display: block;*/
-  height: auto !important; /* override the extjs default theme style of 18px */
+  height: auto !important;
+  /* override the extjs default theme style of 18px */
   margin: 0;
   outline: 0;
   /*overflow: hidden;*/
   /*padding: 2px;*/
   /*padding: 0 33px 0 0;*/
-  padding: 0 5px 5px 5px; /* special padding because selected items need margin-top */
+  padding: 0 5px 5px 5px;
+  /* special padding because selected items need margin-top */
   position: relative;
-  white-space: normal; /* make selected options wrap */
-  width: auto !important; /* prevents the right border to be cut off */
+  white-space: normal;
+  /* make selected options wrap */
+  width: auto !important;
+  /* prevents the right border to be cut off */
 
   .ext-strict .x-toolbar.x-small-editor & {
-    height: auto !important; /* override the extjs default theme style high specifiy + !important rule, wtf... */
-  }
-
-  input[disabled] {
-    /*background-color: transparent;*/
+    height: auto !important;
+    /* override the extjs default theme style high specifiy + !important rule, wtf... */
   }
 
   ul {
     cursor: text;
     min-height: 20px;
-    overflow: visible; /* prevent item box-shadow from being cut off */
-    padding-right: 61px; /* 2 * 30px for each .x-form-trigger + 1px border */
-    white-space: normal; /* make selected options wrap */
-    width: auto !important; /* override extjs width calculation */
+    overflow: visible;
+    /* prevent item box-shadow from being cut off */
+    padding-right: 61px;
+    /* 2 * 30px for each .x-form-trigger + 1px border */
+    white-space: normal;
+    /* make selected options wrap */
+    width: auto !important;
+    /* override extjs width calculation */
 
     .x-toolbar & {
-      margin: -5px 0 0 -5px; /* fix for superbox selects in toolbars */
+      margin: -5px 0 0 -5px;
+      /* fix for superbox selects in toolbars */
     }
 
     li {
@@ -801,9 +920,11 @@ input::-moz-focus-inner {
         /*background-color: #DEE7F8;*/
         /*border-radius: $borderRadius;*/
         /*border: 1px solid #CAD8F3;*/
-        cursor: default; /* don't make the selected options appear like full buttons */
+        cursor: default;
+        /* don't make the selected options appear like full buttons */
         font-size: 12px;
-        padding: 4px 18px 4px 4px !important; /* can somehow not override the extended rules */
+        padding: 4px 18px 4px 4px !important;
+        /* can somehow not override the extended rules */
         position: relative;
 
         /* unnecessary as the hover styles are inherited from secondary-button */
@@ -824,13 +945,18 @@ input::-moz-focus-inner {
           cursor: pointer;
           display: inline-block;
           /*font-size: 1px;*/
-          outline: 0; /* fix firefox dotted outlines */
+          outline: 0;
+          /* fix firefox dotted outlines */
           opacity: 0.6;
-          filter: alpha(opacity=60); /* for IE <= 8 */
+          filter: alpha(opacity=60);
+          /* for IE <= 8 */
           padding: 0;
-          position: absolute; top: 0; right: 0;
+          position: absolute;
+          top: 0;
+          right: 0;
           transition: opacity 0.25s;
-          width: 16px; height: 100%;
+          width: 16px;
+          height: 100%;
 
           &:before {
             @extend %pseudo-font;
@@ -839,8 +965,11 @@ input::-moz-focus-inner {
             content: fa-content($fa-var-times);
             color: inherit;
             font-size: 14px;
-            margin-top: -7px; /* half of the height to center vertically with top 50% */
-            position: absolute; top: 50%; right: 0;
+            margin-top: -7px;
+            /* half of the height to center vertically with top 50% */
+            position: absolute;
+            top: 50%;
+            right: 0;
             text-align: center;
             vertical-align: middle;
             width: 16px;
@@ -849,7 +978,8 @@ input::-moz-focus-inner {
           &:hover,
           &:focus {
             opacity: 1;
-            filter: alpha(opacity=100); /* for IE <= 8 */
+            filter: alpha(opacity=100);
+            /* for IE <= 8 */
           }
         }
       }
@@ -880,12 +1010,17 @@ input::-moz-focus-inner {
   /* these buttons got the .x-form-trigger class assigned */
   .x-superboxselect-btns {
     overflow: visible;
-    position: absolute; top: 0; right: 0;
-    width: 61px; height: 100%; /* 61px account for the border of the clear button */
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 61px;
+    height: 100%;
+    /* 61px account for the border of the clear button */
 
     .x-superboxselect-btn-expand {
       border-radius: 0;
-      right: 31px; /* account for the border of the clear button */
+      right: 31px;
+      /* account for the border of the clear button */
     }
 
     .x-superboxselect-btn-clear {
@@ -907,7 +1042,9 @@ input::-moz-focus-inner {
       }
     }
   }
-} /* .x-superboxselect */
+}
+
+/* .x-superboxselect */
 /*} /* .x-form-element */
 
 
@@ -916,7 +1053,7 @@ input::-moz-focus-inner {
   padding: 15px 15px 0;
 
   label {
-    color: #777777;
+    color: $boulder;
     display: block;
     font-weight: bold;
     margin-bottom: 2px;
@@ -927,7 +1064,7 @@ input::-moz-focus-inner {
     background-color: $coreFieldBg;
     background-image: none;
     border-radius: $borderRadius;
-    border: 1px solid #CCCCCC;
+    border: 1px solid $silver;
     position: relative;
     width: 97%;
   }
@@ -1038,7 +1175,7 @@ input::-moz-focus-inner {
 }*/
 
 .x-editor .x-form-check-wrap {
-  background-color: #fff;
+  background-color: $white;
 }
 
 /* fix combo on grid editor bug */
@@ -1051,7 +1188,7 @@ input::-moz-focus-inner {
 }
 
 .x-grid-editor .x-form-field-wrap img {
-  background-color: white;
+  background-color: $white;
   background-image: url($imgPath + 'modx-theme/form/trigger.png');
 }
 
@@ -1124,18 +1261,20 @@ input::-moz-focus-inner {
 }
 
 .x-form-invalid-msg {
-  color: #c0272b;
+  color: $red;
   font: $fontSmall;
   margin-top: 2px;
   position: relative;
-	&:before {
-		@extend %pseudo-font;
-		content: fa-content($fa-var-exclamation-triangle); /* : "\f071" */
-		position: absolute;
-		top: 3px;
-		left: 3px;
-		color: inherit;
-	}
+
+  &:before {
+    @extend %pseudo-font;
+    content: fa-content($fa-var-exclamation-triangle);
+    /* : "\f071" */
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    color: inherit;
+  }
 }
 
 .x-form-empty-field {
@@ -1144,20 +1283,17 @@ input::-moz-focus-inner {
 
 .x-grid3 {
   .x-small-editor {
+
     .x-form-text,
     .x-form-field-wrap {
       font: $fontSmall;
       margin-top: 7px;
-      padding: 2px 5px 2px 5px;
+      padding: 2px 5px;
 
       .x-form-text {
         margin: 0;
         padding: 0;
       }
-    }
-
-    .x-form-text {
-      /*margin-top: 7px;*/
     }
 
     .x-form-field-wrap {
@@ -1172,16 +1308,21 @@ input::-moz-focus-inner {
 
 /* the following styles have to be outside of their component blocks as they are inserted at the end of the DOM */
 .x-combo-list {
-  border: 0; /* set the border on .x-combo-list-inner */
+  border: 0;
+  /* set the border on .x-combo-list-inner */
   border-radius: 0 0 $borderRadius $borderRadius;
-  overflow: visible; /* prevent the left/right borders of .x-combo-list-inner to be cut off */
+  overflow: visible;
+  /* prevent the left/right borders of .x-combo-list-inner to be cut off */
 
   .x-combo-list-inner {
     background-color: $dropdownBg;
-    border: 1px solid $mediumGray; /* apply the border here as we move this element 1px left to be in line with the combobox border */
+    border: 1px solid $mediumGray;
+    /* apply the border here as we move this element 1px left to be in line with the combobox border */
     border-radius: 0 0 $borderRadius $borderRadius;
-    margin-left: -1px; /* we cannot use this on the .x-combo-list element as it's used for position calculation */
-    width: 100% !important; /* override extjs calculated inline dimensions and stretch to container */
+    margin-left: -1px;
+    /* we cannot use this on the .x-combo-list element as it's used for position calculation */
+    width: 100% !important;
+    /* override extjs calculated inline dimensions and stretch to container */
   }
 
   .x-combo-list-item {
@@ -1192,7 +1333,8 @@ input::-moz-focus-inner {
 
     &.x-combo-selected {
       background-color: $brandHover;
-      border: 0 !important; /* override !important extjs default theme style */
+      border: 0 !important;
+      /* override !important extjs default theme style */
     }
   }
 
@@ -1210,11 +1352,13 @@ input::-moz-focus-inner {
     }
 
     .x-toolbar-left table {
-      margin: 0 auto; /* center the buttons regardless of listWidth */
+      margin: 0 auto;
+      /* center the buttons regardless of listWidth */
     }
 
     .x-toolbar-cell {
-      display: inline-block; /* make table cells act as block elements^^, dont look at me... =) */
+      display: inline-block;
+      /* make table cells act as block elements^^, dont look at me... =) */
 
       /* nested to override normal toolbar rules */
       .x-btn,
@@ -1231,7 +1375,7 @@ input::-moz-focus-inner {
 
       .x-btn {
         padding: 1px;
-        transition: color 0.25s;
+        transition: color .25s;
 
         &.x-btn-over,
         &:hover,
@@ -1251,7 +1395,9 @@ input::-moz-focus-inner {
 
         button:before {
           line-height: 20px;
-          top: 0; left: 0; right: 0;
+          top: 0;
+          left: 0;
+          right: 0;
         }
       }
 
@@ -1275,45 +1421,59 @@ input::-moz-focus-inner {
         margin-left: 1px;
       }
     }
+
     /* the first text cell, "Page" */
-    .x-toolbar-cell + .x-toolbar-cell + .x-toolbar-cell {
+    .x-toolbar-cell+.x-toolbar-cell+.x-toolbar-cell {
       .xtb-text {
         display: none;
-        position: absolute; top: 2px; right: 0; left: 0;
+        position: absolute;
+        top: 2px;
+        right: 0;
+        left: 0;
       }
     }
+
     /* the second text cell, "of X" */
-    .x-toolbar-cell + .x-toolbar-cell + .x-toolbar-cell + .x-toolbar-cell + .x-toolbar-cell {
+    .x-toolbar-cell+.x-toolbar-cell+.x-toolbar-cell+.x-toolbar-cell+.x-toolbar-cell {
       .xtb-text {
         display: inline-block;
-        position: absolute; top: auto; right: 0; bottom: 4px; left: 0;
+        position: absolute;
+        top: auto;
+        right: 0;
+        bottom: 4px;
+        left: 0;
       }
     }
+
     /* the last regular button >>, yes, I know it's ugly but tell that Microsoft and say thanks for IE8 =) */
-    .x-toolbar-cell + .x-toolbar-cell + .x-toolbar-cell + .x-toolbar-cell + .x-toolbar-cell + .x-toolbar-cell + .x-toolbar-cell + .x-toolbar-cell + .x-toolbar-cell {
+    .x-toolbar-cell+.x-toolbar-cell+.x-toolbar-cell+.x-toolbar-cell+.x-toolbar-cell+.x-toolbar-cell+.x-toolbar-cell+.x-toolbar-cell+.x-toolbar-cell {
       .x-btn {
         margin-right: 0;
       }
     }
+
     /* the refresh button */
     .x-toolbar-cell:last-child {
       opacity: 0;
-      transition: opacity 0.25s;
+      transition: opacity .25s;
 
       .x-btn {
         font-size: 12px;
         line-height: 1;
         margin: 0;
-        opacity: 0.4;
+        opacity: .4;
         padding: 0;
-        position: absolute; bottom: 2px; right: 1px;
+        position: absolute;
+        bottom: 2px;
+        right: 1px;
 
         &:hover {
           opacity: 1;
         }
 
         button {
-          width: 16px; height: 16px;
+          width: 16px;
+          height: 16px;
 
           &:before {
             font-size: 12px;
@@ -1331,7 +1491,8 @@ input::-moz-focus-inner {
 
   /* the small resize handle bottom right */
   .x-resizable-handle-southeast {
-    bottom: 1px; right: 3px;
+    bottom: 1px;
+    right: 3px;
   }
 }
 
@@ -1340,6 +1501,7 @@ input::-moz-focus-inner {
   border-bottom-color: #bcbcbc;
   color: #464646;
 }
+
 /*.x-resizable-pinned .x-combo-list-inner {
   border-bottom-color: transparent;
 }*/
@@ -1375,6 +1537,7 @@ input::-moz-focus-inner {
       margin: 0;
     }
   }
+
   .x-date-mp-ok,
   .x-date-mp-cancel {
     height: 16px;
@@ -1391,10 +1554,11 @@ input::-moz-focus-inner {
 .x-date-mp-ybtn a.x-date-mp-next {
   display: inline-block;
   opacity: .6;
-  filter: alpha(opacity=60); /* for IE <= 8 */
+  filter: alpha(opacity=60);
+  /* for IE <= 8 */
   margin: 0 auto;
   position: relative;
-  transition: opacity 0.25s;
+  transition: opacity .25s;
 
   &:before {
     @extend %pseudo-font;
@@ -1403,17 +1567,22 @@ input::-moz-focus-inner {
     color: $colorSplash;
     content: '';
     font-size: 18px;
-    position: absolute; top: 0; left: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
     text-align: center;
     vertical-align: middle;
-    width: 18px; height: 18px;
+    width: 18px;
+    height: 18px;
   }
 
   &:hover {
     opacity: 1;
-    filter: alpha(opacity=100); /* for IE <= 8 */
+    filter: alpha(opacity=100);
+    /* for IE <= 8 */
   }
 }
+
 .x-date-right a,
 .x-date-mp-ybtn a.x-date-mp-next {
   &:before {
@@ -1422,21 +1591,25 @@ input::-moz-focus-inner {
     right: 0;
   }
 }
+
 .x-date-left a,
 .x-date-mp-ybtn a.x-date-mp-prev {
   &:before {
     content: fa-content($fa-var-caret-left);
   }
 }
+
 .x-date-inner {
   margin: 0 auto;
 }
+
 .x-date-inner th {
   border-bottom-color: $lightGray;
   color: $darkGray;
   font: $fontSmall;
   font-weight: bold;
 }
+
 .x-date-inner td,
 .x-date-mp td {
   background-color: $white;
@@ -1444,6 +1617,7 @@ input::-moz-focus-inner {
   font: $fontSmall;
   padding: 1px;
 }
+
 .x-date-inner a,
 td.x-date-mp-month a,
 td.x-date-mp-year a {
@@ -1452,10 +1626,12 @@ td.x-date-mp-year a {
   font: inherit;
   font-weight: bold;
 }
+
 td.x-date-mp-month a,
 td.x-date-mp-year a {
   margin: 0 3px 0 3px;
 }
+
 .x-date-inner a:hover,
 .x-date-inner .x-date-prevday a:hover,
 .x-date-inner .x-date-nextday a:hover,
@@ -1465,23 +1641,30 @@ td.x-date-mp-year a:hover {
   background-color: $softGray;
   color: $darkGray;
 }
+
 .x-date-inner .x-date-disabled a {
   background-color: $lightGray;
   color: $mediumGray;
 }
+
 .x-date-inner .x-date-active {
   color: $black;
 }
+
 .x-date-inner .x-date-today a {
   border-color: $colorSplash;
 }
+
 .x-date-inner span {
-  font-style: normal; /* prevent italic font style because of em */
+  font-style: normal;
+  /* prevent italic font style because of em */
 }
+
 .x-date-inner .x-date-active span,
 .x-date-inner .x-date-selected span {
   font-weight: bold;
 }
+
 .x-date-inner .x-date-selected a,
 td.x-date-mp-sel a {
   background-color: $colorSplash;
@@ -1489,10 +1672,12 @@ td.x-date-mp-sel a {
   border-color: $white;
   color: $colorSplashContrast;
 }
+
 .x-date-inner .x-date-prevday a,
 .x-date-inner .x-date-nextday a {
   color: $softGray;
 }
+
 .x-date-bottom,
 .x-date-mp-btns {
   border-top: 1px solid $lightGray;
@@ -1503,16 +1688,20 @@ td.x-date-mp-sel a {
     border-top: 1px solid $lightGray;
   }
 }
+
 td.x-date-mp-sep {
   border-right: 1px solid $borderColor;
 }
+
 .x-date-mmenu {
   background-color: #eee !important;
 }
+
 .x-date-mmenu .x-menu-item {
   color: $black;
   font: $fontSmall;
 }
+
 /*.x-date-mp {
   background-color: $white;
 }*/
