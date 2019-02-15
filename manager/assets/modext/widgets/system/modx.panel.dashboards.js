@@ -70,12 +70,14 @@ MODx.grid.Dashboards = function(config) {
             ,width: 150
             ,sortable: true
             ,editor: { xtype: 'textfield' ,allowBlank: false }
+            ,renderer: Ext.util.Format.htmlEncode
         },{
             header: _('description')
             ,dataIndex: 'description'
             ,width: 300
             ,sortable: false
             ,editor: { xtype: 'textarea' }
+            ,renderer: Ext.util.Format.htmlEncode
         }]
         ,tbar: [{
             text: _('dashboard_create')
