@@ -44,7 +44,7 @@ class SystemInfoManagerController extends modManagerController {
         if (!empty($m['zip'])) $pi = array_merge($pi,array('zip' => $m['zip']));
         $this->version = [
             'smarty'=> $this->modx->smarty->_version,
-            'PHPMailer'=> PHPMailer\PHPMailer\PHPMailer::VERSION
+            'PHPMailer'=> $this->modx->PHPMailer->Version
         ];
 
         $this->pi = array_merge($pi,$this->getPhpInfo(INFO_CONFIGURATION));
