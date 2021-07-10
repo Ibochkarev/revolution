@@ -1,4 +1,5 @@
 <?php
+
 /*
  * This file is part of MODX Revolution.
  *
@@ -48,7 +49,7 @@ if (!$phpVersionSatisfiesRequirement) {
     ];
 }
 
-$unsatisfiedExtensionRequirements = array_filter(MODX_REQUIRED_EXTENSIONS, function($extensionToValidate) {
+$unsatisfiedExtensionRequirements = array_filter(MODX_REQUIRED_EXTENSIONS, function ($extensionToValidate) {
     $extensionVersion = phpversion($extensionToValidate);
     $extensionIsInstalled = ($extensionVersion !== false);
     return !$extensionIsInstalled;
@@ -117,17 +118,17 @@ if (!empty($unsatisfiedRequirementsErrors)) {
 
 if (MODX_SETUP_INTERFACE_IS_CLI) {
     foreach ($argv as $idx => $argument) {
-        $p = explode('=',ltrim($argument,'--'));
+        $p = explode('=', ltrim($argument, '--'));
         if (isset($p[1])) {
             $_REQUEST[$p[0]] = $p[1];
         }
     }
     if (!empty($_REQUEST['core_path']) && is_dir($_REQUEST['core_path'])) {
-        define('MODX_CORE_PATH',$_REQUEST['core_path']);
+        define('MODX_CORE_PATH', $_REQUEST['core_path']);
     }
     if (!empty($_REQUEST['config_key'])) {
         $_REQUEST['config_key'] = str_replace(['{','}',"'",'"','\$'], '', $_REQUEST['config_key']);
-        define('MODX_CONFIG_KEY',$_REQUEST['config_key']);
+        define('MODX_CONFIG_KEY', $_REQUEST['config_key']);
     }
 }
 
