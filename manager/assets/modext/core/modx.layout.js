@@ -620,6 +620,9 @@ Ext.extend(MODx.Layout, Ext.Viewport, {
              */
             function create(button, submenu) {
                 destroy(button);
+                // Avoid leftover absolute bottom/height before Popper measures.
+                submenu.style.bottom = 'auto';
+                submenu.style.height = 'auto';
                 // eslint-disable-next-line no-undef
                 const popper = new Popper(button, submenu, {
                     placement: position,
