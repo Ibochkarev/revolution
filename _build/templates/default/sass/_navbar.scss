@@ -353,6 +353,13 @@
         // Absolute fallback before Popper; open upward like #14300.
         top: auto;
         bottom: -1px;
+
+        // Popper sets position:fixed + top. Leaving bottom set stretches the
+        // panel to the viewport and leaves empty scrollable space under items.
+        &.active {
+          bottom: auto;
+          height: auto;
+        }
       }
 
       &-arrow {

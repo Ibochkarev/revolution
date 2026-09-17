@@ -638,6 +638,9 @@ Ext.extend(MODx.Layout, Ext.Viewport, {
                                 const
                                     popperStyle = data.instance.popper.style,
                                     popperOffsets = data.offsets.popper;
+                                // Clear CSS bottom/height so fixed + top does not stretch the panel.
+                                popperStyle.bottom = 'auto';
+                                popperStyle.height = 'auto';
                                 Object.keys(popperOffsets).forEach(prop => {
                                     // Let CSS max-height own vertical size so long menus scroll.
                                     if (prop !== 'bottom' && prop !== 'right' && prop !== 'height') {
