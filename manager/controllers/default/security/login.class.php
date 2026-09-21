@@ -210,18 +210,6 @@ class SecurityLoginManagerController extends modManagerController
                 : null;
             if (!$ml || !in_array($ml, $languages)) {
                 $ml = $this->modx->getOption('manager_language', $_SESSION);
-                if (!$ml) {
-                    // Try to detect default browser language
-                    $accept_languages = strtolower($_SERVER['HTTP_ACCEPT_LANGUAGE'] ?? '');
-                    preg_match_all('#([\w-]+)(?:[^,\d]+([\d.]+))?#', $accept_languages, $matches, PREG_SET_ORDER);
-                    foreach ($matches as $match) {
-                        $lang = trim(explode('-', $match[1])[0]);
-                        if (in_array($lang, $languages)) {
-                            $ml = $lang;
-                            break;
-                        }
-                    }
-                }
             }
         }
         // Fall back to default language
