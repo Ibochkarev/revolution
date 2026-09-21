@@ -887,10 +887,6 @@ abstract class modMediaSource extends modAccessibleSimpleObject implements modMe
      */
     public function removeObject($path)
     {
-        if (!$this->checkFiletype($path)) {
-            return false;
-        }
-
         // Ensure file can be read.
         try {
             if (!$this->filesystem->fileExists($path)) {
