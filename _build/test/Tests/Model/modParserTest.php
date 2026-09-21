@@ -427,16 +427,12 @@ return implode("|", array_map(function ($k) use ($scriptProperties) { return $k 
                 ]
             ],
             [
-                // This test makes sure that spacing around the `:` doesn't matter and spacing in
-                // the output is kept
+                // Spacing around `:` does not matter, and spacing in the output is kept.
+                // The nested tag shares [[+is2]] with its parent, so it is replaced in this pass.
                 [
                     'processed' => 1,
                     'content' => "
-                        [[+is2
-                            :is=`2`
-                            :then=`2`
-                            :else=`more`
-                        ]]
+                        2
                     "
                 ],
                 "[[+is2
@@ -461,9 +457,9 @@ return implode("|", array_map(function ($k) use ($scriptProperties) { return $k 
                 ]
             ],
             [
-                // Same as previous, but now parsing 2-depth to get the final result
+                // The nested tag is already replaced, so another pass finds nothing.
                 [
-                    'processed' => 2,
+                    'processed' => 1,
                     'content' => "
                         2
                     "
@@ -492,7 +488,7 @@ return implode("|", array_map(function ($k) use ($scriptProperties) { return $k 
             [
                 [
                     'processed' => 1,
-                    'content' => "[[+is2:is=`2`:then=`2`:else=`more`]]"
+                    'content' => "2"
                 ],
                 "[[+is2:is=`1`:then=`[[+is2]]`:else=`[[+is2:is=`2`:then=`[[+is2]]`:else=`more`]]`]]",
                 [
@@ -507,7 +503,7 @@ return implode("|", array_map(function ($k) use ($scriptProperties) { return $k 
             ],
             [
                 [
-                    'processed' => 2,
+                    'processed' => 1,
                     'content' => "2"
                 ],
                 "[[+is2:is=`1`:then=`[[+is2]]`:else=`[[+is2:is=`2`:then=`[[+is2]]`:else=`more`]]`]]",
@@ -523,7 +519,7 @@ return implode("|", array_map(function ($k) use ($scriptProperties) { return $k 
             ],
             [
                 [
-                    'processed' => 2,
+                    'processed' => 1,
                     'content' => "more"
                 ],
                 "[[+is3:is=`1`:then=`[[+is3]]`:else=`[[+is3:is=`2`:then=`[[+is3]]`:else=`more`]]`]]",
