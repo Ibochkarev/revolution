@@ -1315,4 +1315,45 @@ ddd
             ],
         ];
     }
+
+    /**
+     * A shorter tag that is also part of a longer tag must not be replaced first.
+     * @see https://github.com/modxcms/revolution/issues/16044
+     */
+    public function testMergeTagOutputReplacesLongerTagsFirst()
+    {
+        $short = '[[++mail_smtp_hosts]]';
+        $long = '[[echoinput:eq=`0`:then=`test1:[[++mail_smtp_hosts]];`:else=`test2:[[++mail_smtp_hosts]]`]]';
+        $content = $short . ' ' . $long;
+        $tagMap = [
+            $short => 'localhost',
+            $long => 'test1:localhost;',
+        ];
+        $this->modx->parser->mergeTagOutput($tagMap, $content);
+        $this->assertSame('localhost test1:localhost;', $content);
+    }
+
+    /**
+     * The setting tag from #16044 appears both on its own and inside :then with a semicolon.
+     */
+    public function testSettingTagInsideFilterThenKeepsSemicolon()
+    {
+        $name = 'echoinput_' . bin2hex(random_bytes(4));
+        $snippet = $this->modx->newObject(modSnippet::class);
+        $snippet->set('name', $name);
+        $snippet->set('content', '<?php return $input;');
+        $this->assertTrue($snippet->save());
+
+        $previous = $this->modx->getOption('mail_smtp_hosts');
+        $this->modx->setOption('mail_smtp_hosts', 'localhost');
+        $content = '[[' . $name . '?&input=`[[++mail_smtp_hosts]] [['
+            . $name . ':eq=`0`:then=`test1:[[++mail_smtp_hosts]];`:else=`test2:[[++mail_smtp_hosts]]`?input=`0`]]`]]';
+        try {
+            $this->modx->parser->processElementTags('', $content, true, false, '[[', ']]', [], 10);
+            $this->assertSame('localhost test1:localhost;', $content);
+        } finally {
+            $this->modx->setOption('mail_smtp_hosts', $previous);
+            $snippet->remove();
+        }
+    }
 }
