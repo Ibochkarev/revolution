@@ -27,12 +27,24 @@ MODx.grid.MediaSourceAccess = function(config) {
             header: _('minimum_role')
             ,dataIndex: 'authority_name'
             ,width: 50
-            ,renderer: { fn: function(v,md,record) {
-                return this.renderLink(v, {
-                    href: '?a=security/permission'
-                    ,target: '_blank'
-                });
-            }, scope: this }
+            ,renderer: {
+                fn: function(v, record) {
+                    const { authority } = record.data;
+                    let name = v || '';
+                    const suffix = ` - ${authority}`;
+                    if (name && name.slice(-suffix.length) === suffix) {
+                        name = name.slice(0, -suffix.length);
+                    }
+                    let text = name;
+                    if (name !== '' && authority !== undefined && authority !== null && authority !== '') {
+                        text = `${name} (${authority})`;
+                    } else if (name === '' && (authority || authority === 0)) {
+                        text = String(authority);
+                    }
+                    return Ext.util.Format.htmlEncode(text);
+                },
+                scope: this
+            }
         },{
             header: _('policy')
             ,dataIndex: 'policy_name'
